@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <style>
+     webview {
+       display: inline-block;
+       width: 640px;
+       height: 480px;
+     }
+   </style>
+  </head>
+  <body>
+    <div id='result'>stream window</div>
+    <script>
+      window.name = 'popup';
+      function onTabStream(stream) {
+          window.stream_url = URL.createObjectURL(stream);
+         document.getElementById('result').innerHTML = 'stream created: ' + stream_url;
+      }
+      chrome.tabCapture.capture({ audio: false, video: true }, onTabStream);
+    </script>
+    <webview src="https://nwjs.io"></webview>
+  </body>
+</html>

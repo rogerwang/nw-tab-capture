@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+  video {
+    width: 320px;
+    height: 240px;
+    background: rgba(0,0,0,0.25);
+  }
+    </style>
+  </head>
+  <body>
+    <div id='result'></div>
+    <video id="video" autoplay></video>
+    <script>
+      window.name = 'index';
+      function output(val) {
+        document.getElementById('result').innerHTML = val;
+      }
+      function grab() {
+          document.querySelector('video').src = win.window.stream_url;
+      }
+    </script>
+    <button id='grab' onclick="grab();">show captured video of webpage</button>
+    <script>
+      var win = null;
+      nw.Window.open('popup.html', {}, function(w) {
+        win = w;
+      });
+    </script>
+  </body>
+</html>
