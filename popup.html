@@ -14,8 +14,8 @@
     <script>
       window.name = 'popup';
       function onTabStream(stream) {
-          window.stream_url = URL.createObjectURL(stream);
-         document.getElementById('result').innerHTML = 'stream created: ' + stream_url;
+          window.web_stream = stream;
+         document.getElementById('result').innerHTML = 'stream created. click the button on the main window. ';
       }
       chrome.tabCapture.capture({ audio: false, video: true }, onTabStream);
     </script>

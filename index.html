@@ -18,7 +18,7 @@
         document.getElementById('result').innerHTML = val;
       }
       function grab() {
-          document.querySelector('video').src = win.window.stream_url;
+          document.querySelector('video').srcObject = win.window.web_stream;
       }
     </script>
     <button id='grab' onclick="grab();">show captured video of webpage</button>
